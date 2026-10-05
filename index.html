@@ -1,0 +1,119 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 64 64%22%3E%3Crect width=%2264%22 height=%2264%22 rx=%2212%22 fill=%22%23171126%22/%3E%3Ctext x=%2232%22 y=%2247%22 text-anchor=%22middle%22 fill=%22%23ff886d%22 font-family=%22Arial%22 font-size=%2244%22 font-weight=%22bold%22%3EVI%3C/text%3E%3C/svg%3E">
+  <meta name="theme-color" content="#171126">
+  <meta name="description" content="Projeto escolar sobre GTA VI com três bibliotecas JavaScript: Swiper, AOS e canvas-confetti.">
+  <title>GTA VI | Projeto Bibliotecas JavaScript</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Oswald:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.css">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11.2.10/swiper-bundle.min.css">
+  <link rel="stylesheet" href="style.css">
+  <script defer src="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.js"></script>
+  <script defer src="https://cdn.jsdelivr.net/npm/swiper@11.2.10/swiper-bundle.min.js"></script>
+  <script defer src="https://cdn.jsdelivr.net/npm/canvas-confetti@1.9.3/dist/confetti.browser.min.js"></script>
+  <script defer src="script.js"></script>
+</head>
+<body>
+  <a class="skip" href="#conteudo">Pular para o conteúdo</a>
+  <header class="topbar">
+    <a class="brand" href="#inicio" aria-label="Voltar ao início">VI<span>.</span> <small>FAN PROJECT</small></a>
+    <nav aria-label="Navegação principal">
+      <a href="#apresentacao">Apresentar</a><a href="#historia">O jogo</a><a href="#novidades">Novidades</a><a href="#lugares">Galeria</a><a href="#bibliotecas">Bibliotecas</a>
+    </nav>
+    <a class="top-link" href="https://www.rockstargames.com/VI" target="_blank" rel="noopener noreferrer">Site oficial ↗</a>
+  </header>
+  <main id="conteudo">
+    <section class="hero" id="inicio">
+      <div class="hero-shade"></div>
+      <div class="hero-content">
+        <p class="eyebrow">UM PROJETO SOBRE GRAND THEFT AUTO VI</p>
+        <h1>VICE CITY<br><em>CHAMA.</em></h1>
+        <p class="hero-copy">Treze anos depois de GTA V, a próxima grande viagem da série tem Jason e Lucia em Vice City. Explore o que já foi anunciado e veja três bibliotecas JavaScript em ação.</p>
+        <div class="hero-actions"><a class="primary-button" href="#apresentacao">Começar apresentação <span aria-hidden="true">↘</span></a><span class="release">LANÇAMENTO PREVISTO<br><strong>19 NOV 2026</strong></span></div>
+      </div>
+      <span class="art-credit">Arte promocional de GTA VI © Rockstar Games.</span>
+    </section>
+
+    <section class="presentation-guide wrap" id="apresentacao" aria-labelledby="guide-title">
+      <div class="guide-heading" data-aos="fade-up"><p class="eyebrow coral">ROTEIRO RÁPIDO PARA APRESENTAR</p><h2 id="guide-title">O que mostrar <em>e falar.</em></h2><p>Siga esta ordem. Cada botão leva à demonstração da biblioteca na própria página.</p></div>
+      <div class="guide-steps">
+        <article data-aos="fade-up"><span>01</span><h3>Role a página</h3><p><strong>Fale:</strong> “AOS significa Animate On Scroll. Ela faz as seções aparecerem quando entram na tela.”</p><a href="#historia">Mostrar AOS ↘</a></article>
+        <article data-aos="fade-up" data-aos-delay="80"><span>02</span><h3>Passe as imagens</h3><p><strong>Fale:</strong> “Swiper transforma as fotos em um carrossel que responde ao arraste, às setas e ao teclado.”</p><a href="#lugares">Mostrar Swiper ↘</a></article>
+        <article data-aos="fade-up" data-aos-delay="160"><span>03</span><h3>Clique no botão</h3><p><strong>Fale:</strong> “canvas-confetti desenha partículas coloridas quando a pessoa clica.”</p><a href="#efeito">Mostrar confetes ↘</a></article>
+      </div>
+      <p class="guide-summary">Resumo para decorar: <strong>AOS anima • Swiper desliza • canvas-confetti comemora.</strong> <a href="#bibliotecas">Ver o código explicado ↗</a></p>
+    </section>
+
+    <section class="intro wrap" id="historia">
+      <div data-aos="fade-up"><p class="eyebrow coral">01 / O JOGO</p><h2>Uma história em<br><em>Leonida.</em></h2></div>
+      <div class="intro-text" data-aos="fade-up" data-aos-delay="120">
+        <p>GTA VI acompanha Jason e Lucia. Depois que um serviço aparentemente simples dá errado, os dois se veem no meio de uma conspiração criminosa pelo estado fictício de Leonida, que inclui Vice City. Para sobreviver, precisam confiar um no outro.</p>
+        <p>O lançamento está previsto para <strong>19 de novembro de 2026</strong> no <strong>PlayStation 5</strong> e <strong>Xbox Series X|S</strong>. Esta página é um trabalho escolar independente.</p>
+        <a class="text-link" href="https://www.rockstargames.com/VI" target="_blank" rel="noopener noreferrer">Conhecer o jogo no site oficial ↗</a>
+      </div>
+    </section>
+
+    <section class="anticipation" id="espera" aria-labelledby="anticipation-title">
+      <div class="wrap"><p class="eyebrow coral" data-aos="fade-up">02 / POR QUE TANTA EXPECTATIVA?</p><h2 id="anticipation-title" data-aos="fade-up">Uma espera de <em>13 anos.</em></h2>
+        <div class="milestones" data-aos="fade-up">
+          <article><strong>2013</strong><h3>GTA V chega às lojas</h3><p>Lançado em 17 de setembro, tornou-se a referência mais recente entre os GTA numerados.</p></article>
+          <article><strong>2023</strong><h3>O primeiro trailer de GTA VI</h3><p>A Rockstar revela o retorno a Vice City, agora no estado de Leonida.</p></article>
+          <article><strong>2026</strong><h3>Nova data prevista</h3><p>O lançamento está marcado para 19 de novembro, após adiamentos anunciados pela empresa.</p></article>
+        </div>
+        <div class="analysis" data-aos="fade-up"><h3>Por que o público confia na Rockstar?</h3><p>GTA V e Red Dead Redemption 2 deram à Rockstar uma reputação de mundos abertos ricos em detalhes e histórias ambiciosas. O sucesso comercial de GTA V e a longa vida de GTA Online ajudam a explicar o interesse pelo próximo jogo. Essa confiança é uma <strong>expectativa baseada no histórico</strong>, não uma garantia de que GTA VI corresponderá a todas as promessas.</p><p>Os adiamentos também pesam nessa avaliação: a Rockstar afirmou que precisava de mais tempo para chegar ao padrão de qualidade esperado. O público só poderá julgar o jogo completo depois do lançamento.</p><div class="source-links"><a href="https://www.rockstargames.com/newswire/article/ak14o88385oo81/grand-theft-auto-v-is-coming-9172013.html" target="_blank" rel="noopener noreferrer">GTA V em 2013 ↗</a><a href="https://www.take2games.com/ir/news/rockstar-games-announces-grand-theft-auto-vi-coming-2025" target="_blank" rel="noopener noreferrer">Histórico da série ↗</a><a href="https://www.rockstargames.com/br/newswire/article/ak3ak31a49a221/grand-theft-auto-vi-is-now-set-to-launch-november-19-2026" target="_blank" rel="noopener noreferrer">Comunicado do adiamento ↗</a></div></div>
+      </div>
+    </section>
+
+    <section class="news wrap" id="novidades" aria-labelledby="news-title">
+      <div data-aos="fade-up">
+        <p class="eyebrow coral">NOVIDADES · CONFERIDAS EM 5/10/2026</p>
+        <h2 id="news-title">O que sabemos <em>até agora.</em></h2>
+        <p>A Rockstar mantém a previsão de lançamento em 19 de novembro de 2026 para PS5 e Xbox Series X|S. O jogo ainda não saiu; informações sobre sua versão final podem mudar.</p>
+      </div>
+      <div class="news-list" data-aos="fade-up" data-aos-delay="120">
+        <article><time datetime="2026-09-29">29 SET 2026</time><div><h3>Fauna e clima na Game Informer</h3><p>Segundo a reportagem com a Rockstar, Leonida terá mais de 170 espécies de animais terrestres, aéreos e aquáticos. O sistema climático inclui tempestades tropicais e furacões; a frequência e o impacto deles nas missões seguem sem confirmação.</p><a href="https://gameinformer.com/GTAVI" target="_blank" rel="noopener noreferrer">Ler a edição da Game Informer ↗</a></div></article>
+        <article><time datetime="2026-08-27">27 AGO 2026</time><div><h3>Um olhar estendido</h3><p>A Rockstar publicou uma apresentação mais longa, capturada dentro do jogo no PlayStation 5.</p><a href="https://www.rockstargames.com/newswire/article/4k138k8okkk483/grand-theft-auto-vi-an-extended-look-now-playing" target="_blank" rel="noopener noreferrer">Ver anúncio da Rockstar ↗</a></div></article>
+        <p class="news-source">Esta página registra informações verificadas nesta data. Para anúncios posteriores, veja o <a href="https://www.rockstargames.com/newswire?tag_id=191" target="_blank" rel="noopener noreferrer">Newswire da Rockstar ↗</a> e a <a href="https://gameinformer.com/GTAVI" target="_blank" rel="noopener noreferrer">edição 382 da Game Informer ↗</a>.</p>
+      </div>
+    </section>
+
+    <section class="places" id="lugares">
+      <div class="wrap places-head" data-aos="fade-up"><div><p class="eyebrow coral">03 / GALERIA INTERATIVA</p><h2>Conheça o clima<br>de <em>Leonida.</em></h2></div><p>Imagens de divulgação de GTA VI. Arraste, clique nas setas ou use o teclado para navegar.</p></div>
+      <div class="wrap gallery-shell" data-aos="fade-up">
+        <div class="swiper gallery" aria-label="Galeria de imagens de divulgação de GTA VI">
+          <div class="swiper-wrapper">
+            <article class="swiper-slide"><img src="assets/vice-city.jpg" alt="Captura de GTA VI com a orla iluminada de Vice City à noite"><div class="slide-caption"><span>01 / CIDADE</span><h3>Vice City</h3><p>Prédios, avenidas e uma orla cheia de luzes.</p></div></article>
+            <article class="swiper-slide"><img src="assets/leonida-keys.jpg" alt="Captura de GTA VI com avião sobrevoando ilhas e pontes de Leonida Keys"><div class="slide-caption"><span>02 / LITORAL</span><h3>Leonida Keys</h3><p>Ilhas, pontes e rotas sobre o mar.</p></div></article>
+            <article class="swiper-slide"><img src="assets/jason-lucia.jpg" alt="Arte de divulgação de Jason e Lucia diante de Vice City ao pôr do sol"><div class="slide-caption"><span>03 / PROTAGONISTAS</span><h3>Jason & Lucia</h3><p>A dupla no centro da história.</p></div></article>
+            <article class="swiper-slide"><img src="assets/dupla-gta-vi.webp" alt="Arte de divulgação de Jason e Lucia de máscaras diante de um posto de gasolina"><div class="slide-caption"><span>04 / HISTÓRIA</span><h3>Uma aliança</h3><p>Juntos em uma trama criminosa por Leonida.</p></div></article>
+          </div>
+          <div class="swiper-pagination"></div>
+        </div>
+        <div class="gallery-controls"><button class="gallery-prev" type="button" aria-label="Imagem anterior">←</button><button class="gallery-next" type="button" aria-label="Próxima imagem">→</button></div>
+      </div>
+      <p class="wrap gallery-note">Capturas e artes promocionais de GTA VI fornecidas para este projeto. Imagens © Rockstar Games / Take-Two Interactive. A página é independente.</p>
+    </section>
+
+    <section class="interaction wrap" id="efeito" data-aos="fade-up">
+      <div><p class="eyebrow coral">04 / INTERAÇÃO</p><h2>Entre no <em>clima.</em></h2><p>O botão chama uma função da biblioteca canvas-confetti. Clique para ver o efeito acontecer na própria página.</p></div>
+      <div class="interaction-action"><button class="primary-button celebrate" id="celebrate" type="button">Soltar confetes ✦</button><p id="feedback" role="status" aria-live="polite">Experimente a terceira biblioteca.</p></div>
+    </section>
+
+    <section class="libraries" id="bibliotecas">
+      <div class="wrap"><p class="eyebrow coral" data-aos="fade-up">05 / COMO FOI FEITO</p><h2 data-aos="fade-up">Três bibliotecas.<br><em>Três funções.</em></h2>
+        <div class="lib-list">
+          <article data-aos="fade-up"><span class="lib-number">01</span><div><h3>Swiper</h3><p>Cria o carrossel de imagens. O JavaScript seleciona <code>.gallery</code> e configura setas, paginação e navegação pelo teclado.</p></div><span class="lib-kind">GALERIA</span></article>
+          <article data-aos="fade-up"><span class="lib-number">02</span><div><h3>AOS</h3><p>Mostra animações quando as seções entram na tela. O HTML marca os elementos com <code>data-aos="fade-up"</code> e o JavaScript inicia <code>AOS.init()</code>.</p></div><span class="lib-kind">ANIMAÇÃO</span></article>
+          <article data-aos="fade-up"><span class="lib-number">03</span><div><h3>canvas-confetti</h3><p>Gera partículas coloridas no clique. O botão chama a função <code>confetti()</code> com quantidade e cores escolhidas para a página.</p></div><span class="lib-kind">EFEITO</span></article>
+        </div>
+      </div>
+    </section>
+  </main>
+  <footer class="footer wrap"><span>VI<span class="dot">.</span> FAN PROJECT</span><p>Trabalho escolar de Programação Web I • Página independente, sem vínculo com Rockstar Games.</p><a href="#inicio">Voltar ao topo ↑</a></footer>
+</body>
+</html>
