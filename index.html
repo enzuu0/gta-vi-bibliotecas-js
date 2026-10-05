@@ -5,6 +5,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 64 64%22%3E%3Crect width=%2264%22 height=%2264%22 rx=%2212%22 fill=%22%23171126%22/%3E%3Ctext x=%2232%22 y=%2247%22 text-anchor=%22middle%22 fill=%22%23ff886d%22 font-family=%22Arial%22 font-size=%2244%22 font-weight=%22bold%22%3EVI%3C/text%3E%3C/svg%3E">
   <meta name="theme-color" content="#171126">
+  <script>try{document.documentElement.dataset.theme=localStorage.getItem('gta-vi-theme')==='dark'?'dark':'vice-city'}catch(e){document.documentElement.dataset.theme='vice-city'}</script>
   <meta name="description" content="Projeto escolar sobre GTA VI com três bibliotecas JavaScript: Swiper, AOS e canvas-confetti.">
   <title>GTA VI | Projeto Bibliotecas JavaScript</title>
   <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -25,7 +26,13 @@
     <nav aria-label="Navegação principal">
       <a href="#apresentacao">Apresentar</a><a href="#historia">O jogo</a><a href="#novidades">Novidades</a><a href="#lugares">Galeria</a><a href="#bibliotecas">Bibliotecas</a>
     </nav>
-    <a class="top-link" href="https://www.rockstargames.com/VI" target="_blank" rel="noopener noreferrer">Site oficial ↗</a>
+    <div class="header-actions">
+      <div class="theme-switch" role="group" aria-label="Estilo visual do site">
+        <button type="button" data-theme-choice="vice-city" aria-pressed="true">Vice City</button>
+        <button type="button" data-theme-choice="dark" aria-pressed="false">Escuro</button>
+      </div>
+      <a class="top-link" href="https://www.rockstargames.com/VI" target="_blank" rel="noopener noreferrer">Site oficial ↗</a>
+    </div>
   </header>
   <main id="conteudo">
     <section class="hero" id="inicio">
