@@ -1,5 +1,17 @@
 'use strict';
 
+// Dois estilos visuais; a escolha permanece no navegador do visitante.
+const themeButtons = [...document.querySelectorAll('[data-theme-choice]')];
+function setTheme(theme) {
+  const choice = theme === 'dark' ? 'dark' : 'vice-city';
+  document.documentElement.dataset.theme = choice;
+  themeButtons.forEach(button => button.setAttribute('aria-pressed', String(button.dataset.themeChoice === choice)));
+  document.querySelector('meta[name="theme-color"]').setAttribute('content', choice === 'dark' ? '#0b0e14' : '#171126');
+  try { localStorage.setItem('gta-vi-theme', choice); } catch (e) { /* Navegação privada pode impedir armazenamento. */ }
+}
+themeButtons.forEach(button => button.addEventListener('click', () => setTheme(button.dataset.themeChoice)));
+setTheme(document.documentElement.dataset.theme);
+
 // AOS: anima os elementos marcados com data-aos quando entram na tela.
 if (typeof AOS !== 'undefined') {
   AOS.init({ duration: 750, once: true, offset: 80, disable: window.matchMedia('(prefers-reduced-motion: reduce)').matches });
