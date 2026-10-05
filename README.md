@@ -2,6 +2,8 @@
 
 Site escolar independente sobre GTA VI. A página usa três bibliotecas JavaScript com funções diferentes:
 
+**Links para apresentar:** [abrir o site](https://enzuu0.github.io/gta-vi-bibliotecas-js/) · [baixar os slides](GTA_VI_Bibliotecas_JavaScript.pptx). No site, clique em **Começar apresentação** para seguir o roteiro em três passos.
+
 | Biblioteca | Uso na página | Código principal |
 | --- | --- | --- |
 | Swiper 11.2.10 | Carrossel de imagens oficiais de divulgação | `new Swiper('.gallery', {...})` |
