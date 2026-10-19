@@ -1,0 +1,21 @@
+GAMELOG — Enzo Montinegro — 1º DS
+
+Meu site é um catálogo de jogos conectado ao Supabase.
+Ele usa HTML para a estrutura, CSS para o visual e JavaScript para o funcionamento.
+O Supabase armazena os jogos em um banco PostgreSQL.
+
+CRUD são as quatro operações principais:
+C = Create: cadastrar um jogo.
+R = Read: consultar os jogos e seus detalhes.
+U = Update: editar as informações de um jogo.
+D = Delete: excluir um jogo.
+
+Para demonstrar, vou cadastrar um jogo, mostrar que ele aparece na lista,
+alterar o status e depois excluir. Também posso atualizar a página para
+mostrar que os dados ficam salvos no banco.
+
+O JavaScript usa fetch para conversar com a API REST do Supabase.
+O arquivo banco.sql cria a tabela e as quatro policies de acesso.
+RLS está ativado. As policies permitem acesso público à coleção,
+como foi pedido na atividade. Por isso, todos os visitantes podem editar os jogos.
+A chave utilizada no site é pública e não é a senha do banco.

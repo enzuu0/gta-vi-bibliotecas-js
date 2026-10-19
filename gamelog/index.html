@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Organize sua coleção de jogos. Cadastre, consulte, edite e exclua jogos com o GameLog.">
+  <title>GameLog — Meus jogos</title>
+  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='16' fill='%23bbf36a'/%3E%3Cpath d='M18 32h12m-6-6v12' stroke='%23131916' stroke-width='5' stroke-linecap='round'/%3E%3Ccircle cx='42' cy='29' r='3' fill='%23131916'/%3E%3Ccircle cx='47' cy='37' r='3' fill='%23131916'/%3E%3C/svg%3E">
+  <link rel="stylesheet" href="style.css">
+  <script src="config.js" defer></script>
+  <script src="script.js" defer></script>
+</head>
+<body>
+  <header class="topbar">
+    <a class="brand" href="./" aria-label="GameLog, início"><span class="brand-icon" aria-hidden="true">✚</span>GameLog<span class="brand-dot">.</span></a>
+    <span class="topbar-label">Sua próxima fase começa aqui.</span>
+    <span class="connection" id="connection"><span aria-hidden="true"></span>Conectando…</span>
+  </header>
+
+  <main>
+    <section class="intro">
+      <div><p class="eyebrow">SUA COLEÇÃO, DO SEU JEITO</p><h1>Meus jogos<span>.</span></h1><p class="subtitle">Organize o que você joga e acompanhe suas conquistas.</p></div>
+      <button id="new-game" class="button primary"><span aria-hidden="true">＋</span> Adicionar jogo</button>
+    </section>
+
+    <section class="stats" aria-label="Resumo da coleção">
+      <div class="stat"><span>Total de jogos</span><strong id="total">—</strong><span class="stat-note">na coleção</span></div>
+      <div class="stat"><span>Jogando agora</span><strong id="playing">—</strong><span class="stat-note">aventuras em andamento</span></div>
+      <div class="stat"><span>Concluídos</span><strong id="completed">—</strong><span class="stat-note">zerados ou platinados</span></div>
+      <div class="stat highlight"><span>Platinados <span aria-hidden="true">✦</span></span><strong id="platinum">—</strong><span class="stat-note">cada conquista conta</span></div>
+    </section>
+
+    <section class="collection" aria-labelledby="collection-title">
+      <div class="collection-heading"><div><h2 id="collection-title">Minha coleção</h2><p id="result-count" aria-live="polite">Carregando seus jogos…</p></div><button class="button secondary small" id="refresh" aria-label="Atualizar coleção">↻ <span>Atualizar</span></button></div>
+      <div class="toolbar">
+        <label class="search"><span aria-hidden="true">⌕</span><span class="sr-only">Buscar jogo pelo nome</span><input type="search" id="search" placeholder="Buscar um jogo…" maxlength="100"></label>
+        <label class="filter"><span class="sr-only">Filtrar por plataforma</span><select id="platform-filter"><option value="">Todas as plataformas</option><option>PC</option><option>PlayStation</option><option>Xbox</option><option>Nintendo Switch</option><option>Outra</option></select></label>
+        <label class="filter"><span class="sr-only">Ordenar jogos</span><select id="sort"><option value="recent">Mais recentes</option><option value="name">Nome: A–Z</option><option value="rating">Maior nota</option></select></label>
+      </div>
+      <div class="tabs" aria-label="Filtrar por status"><button class="tab active" data-status="" aria-pressed="true">Todos</button><button class="tab" data-status="Quero jogar" aria-pressed="false">Quero jogar</button><button class="tab" data-status="Jogando" aria-pressed="false">Jogando</button><button class="tab" data-status="Zerado" aria-pressed="false">Zerados</button><button class="tab" data-status="Platinado" aria-pressed="false">Platinados</button></div>
+      <div id="load-error" class="error-panel" role="alert" hidden><strong>Não foi possível carregar a coleção.</strong><p id="error-detail"></p><button id="retry" class="button secondary small">Tentar novamente</button></div>
+      <div class="table-wrap" id="table-wrap"><table><caption class="sr-only">Jogos cadastrados na coleção</caption><thead><tr><th scope="col">Jogo</th><th scope="col">Plataforma</th><th scope="col">Status</th><th scope="col">Nota</th><th scope="col" class="actions-title">Ações</th></tr></thead><tbody id="games"></tbody></table></div>
+      <div id="empty" class="empty" hidden><span class="empty-icon" aria-hidden="true">✚</span><h3 id="empty-title">Sua coleção começa com um jogo.</h3><p id="empty-description">Adicione o primeiro e acompanhe sua jornada.</p><button class="button secondary" id="empty-add">Adicionar jogo</button></div>
+      <div id="loading" class="loading" role="status">Carregando coleção…</div>
+    </section>
+    <p class="public-note">Coleção compartilhada da atividade: os jogos cadastrados podem ser consultados e alterados por qualquer visitante.</p>
+  </main>
+
+  <footer><span>GameLog <span class="footer-dot">/</span> Projeto com banco de dados</span><span>Enzo Montinegro · 1º DS</span></footer>
+
+  <dialog id="game-dialog" aria-labelledby="dialog-title">
+    <form id="game-form">
+      <div class="dialog-heading"><div><p class="eyebrow">MINHA COLEÇÃO</p><h2 id="dialog-title">Adicionar jogo</h2></div><button type="button" class="icon-button close-dialog" aria-label="Fechar">×</button></div>
+      <p class="form-intro">Preencha os dados do jogo. Os campos com * são obrigatórios.</p>
+      <label class="field">Nome do jogo *<input id="name" name="nome" required maxlength="100" placeholder="Ex.: Cuphead" autocomplete="off"></label>
+      <div class="form-row"><label class="field">Plataforma *<select id="platform" name="plataforma" required><option value="">Selecione</option><option>PC</option><option>PlayStation</option><option>Xbox</option><option>Nintendo Switch</option><option>Outra</option></select></label><label class="field">Status *<select id="status" name="status" required><option>Quero jogar</option><option>Jogando</option><option>Zerado</option><option>Platinado</option></select></label></div>
+      <label class="field">Sua nota <span class="optional">(opcional, de 0 a 10)</span><input id="rating" name="nota" type="number" min="0" max="10" step="0.5" placeholder="Ex.: 9.5" inputmode="decimal"></label>
+      <label class="field">Observações <span class="optional">(opcional)</span><textarea id="notes" name="observacoes" rows="3" maxlength="500" placeholder="O que você achou? Qual é a próxima conquista?"></textarea></label>
+      <p id="form-error" class="inline-error" role="alert" hidden></p>
+      <div class="dialog-footer"><button type="button" class="button secondary close-dialog">Cancelar</button><button type="submit" class="button primary" id="save">Salvar jogo</button></div>
+    </form>
+  </dialog>
+
+  <dialog id="details-dialog" aria-labelledby="details-title"><div class="dialog-heading"><div><p class="eyebrow">DETALHES DO JOGO</p><h2 id="details-title"></h2></div><button class="icon-button" id="close-details" aria-label="Fechar detalhes">×</button></div><dl id="details"></dl><div class="dialog-footer"><button class="button primary" id="edit-details">Editar jogo</button></div></dialog>
+  <dialog id="delete-dialog" aria-labelledby="delete-title"><p class="eyebrow">REMOVER DA COLEÇÃO</p><h2 id="delete-title">Excluir jogo?</h2><p id="delete-description"></p><p class="delete-note">Esta ação não pode ser desfeita.</p><p id="delete-error" class="inline-error" role="alert" hidden></p><div class="dialog-footer"><button class="button secondary" id="cancel-delete">Cancelar</button><button class="button danger" id="confirm-delete">Excluir jogo</button></div></dialog>
+  <div id="toast" class="toast" role="status" hidden></div>
+</body>
+</html>
